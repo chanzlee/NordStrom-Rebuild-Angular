@@ -21,6 +21,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoAccessComponent } from './no-access/no-access.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     HomeComponent,
     NotFoundComponent,
     NoAccessComponent,
-    NavBarComponent
+    NavBarComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,

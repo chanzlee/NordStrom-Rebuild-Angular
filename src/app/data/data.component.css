@@ -1,0 +1,58 @@
+div {
+    color: #393939;
+}
+
+img.seperator {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    z-index: 1;
+}
+
+div.seperator {
+    left: 0%;
+    margin-right: -60px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+td.twoCol {
+    justify-content: center;
+    margin-bottom: 20px;
+    left: 8.5106%;
+    width: 31.9148%;
+}
+
+tr.image-row {
+    width: 80%;
+    margin-bottom: 10px;
+}
+tr.title-row {
+    font-size: 21px;
+    line-height: 1.14;
+    margin: 0;
+    width: 80%;
+    margin-bottom: 10px;
+}
+tr.body-row {
+    font-size: 15px;
+    margin-top: 5px;
+    line-height: 1.4;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+tr.link-row {
+
+    width: 80%;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+img.data {
+    clear: both;
+    position: relative;
+    width: 100%;
+}
