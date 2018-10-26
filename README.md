@@ -1,27 +1,57 @@
-# NordStrom
+# NordStrom Rebuild
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+#### _10/26/2018_, By Chan Lee
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Rebuild NordStrom website using Angular 5.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Setup/Installation Requirements
 
-## Build
+```
+    // install dependent plugins
+    > npm install
+```
+```
+    // start application
+    > ng serve --open
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Specifications
 
-## Running unit tests
+1. Have firebase authentication back-end.
+2. Build components (nav-bar, data, home, login, sign up, admin, cart)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Components
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Navigation bar
+* Featuring news/deals
+* home/login/sign-up/admin routers
+* search feature
+* cart feature
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Technologies Used
+
+* Node.js
+* Angular
+* JWT
+* Typescript
+* TSLint
+* Bootstrap
+* Jquery
+* popperJS
+* Jasmin
+* Karma
+
+## Support and contact details
+
+chanethanlee@gmail.com
+
+## License
+
+MIT License
+
+Copyright (c) 2018 **_Chan Lee_**
