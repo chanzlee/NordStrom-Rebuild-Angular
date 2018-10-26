@@ -30,11 +30,9 @@
         <ul class="navbar-nav">
           <li *ngFor="let navMenu of navMenus" class="nav-item dropdown underline-hover" ngbDropdown>
           
-            <a class="nav-link dropdown" id="dropdown01" ngbDropdownToggle href="#">Designer</a>
+            <a class="nav-link dropdown" id="dropdown01" ngbDropdownToggle href="#">{{navMenu.name}}</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
-              <a class="dropdown-item" href="#">a</a>
-              <a class="dropdown-item" href="#">b</a>
-              <a class="dropdown-item" href="#">c</a>
+              <a *ngFor="let item of navMenu.list" class="dropdown-item" href="#">{{item}}</a>
             </div>
           </li>
         </ul>
