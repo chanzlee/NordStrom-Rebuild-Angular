@@ -6,9 +6,24 @@
 </div>
 <table>
     <tr>
-      <td><img src=".././assets/img/logo.png"></td>
-      <td>Search</td>
-      <td><span *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span *ngIf="!authService.isLoggedIn()"><router-outlet></router-outlet></span></td>
-      <td>Cart</td>
+      <nav class="navbar navbar-expand-md navbar-light">
+          <a class="navbar-brand" routerLink=""><img src=".././assets/img/logo.png"></a>
+        <form class="form-inline col-sm-4">
+           <a href="#">Search</a>
+           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </form>
+            <ul class="nav fixed-left">
+              <li class="nav-item">
+                
+                <a class="nav-link" href="#"><span *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span *ngIf="!authService.isLoggedIn()"><router-outlet></router-outlet></span></a>
+              </li>
+              <li class="nav-cart">
+                <a class="nav-link"><span class="text-link"><a href="https://secure.nordstrom.com/ShoppingBag.aspx">Cart</a></span></a>
+              </li>
+            </ul>
+          </nav>
+    </tr>
+    <tr>
+       
     </tr>
 </table>
