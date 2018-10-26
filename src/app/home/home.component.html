@@ -2,6 +2,6 @@
 
 
   <span *ngIf="authService.isLoggedIn() && authService.currentUser.admin"><a routerLink="/admin">Admin</a></span>
-  <a routerLink="/login">Sign in</a>
+  <a routerLink="/login">Sign in<span class="caret"> </span></a>
   <span *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()">Logout</a></span>
 
