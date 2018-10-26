@@ -15,7 +15,7 @@
       <ul class="nav fixed-left">
         <li class="nav-item">
           
-          <a class="nav-link" href="#"><span *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span *ngIf="!authService.isLoggedIn()"><router-outlet></router-outlet></span></a>
+          <span *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span *ngIf="!authService.isLoggedIn()"><a class="nav-link" routerLink="/login">Sign In</a></span>
         </li>
         <li class="nav-cart">
           <a class="nav-link"><span class="text-link"><a href="https://secure.nordstrom.com/ShoppingBag.aspx">Cart</a></span></a>
