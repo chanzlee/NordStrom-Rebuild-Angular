@@ -3,6 +3,15 @@ div {
     font-size: 1.3rem;
     padding: .6rem 0;
     text-align: center;
+    width: 100%;
+}
+
+div nav.navbar {
+    width: 100%;
+}
+
+div.row.w-100{
+    margin: 5px;
 }
 
 div.uppernav {
@@ -14,4 +23,8 @@ nav.navbar{
     border-bottom: 1px solid #ced4db;
     border-top: 1px solid #ced4db;
     background-color: white;
+}
+
+.logo {
+   text-align: left; 
 }
