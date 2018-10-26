@@ -4,3 +4,11 @@
     <span>All the time.</span>&nbsp;<a href="https://shop.nordstrom.com/content/shipping-methods-charges?cm_sp=merch-_-corp_freeshipping-_-swptcos_info&origin=header-top-promo">See details</a>
   </p>
 </div>
+<table>
+    <tr>
+      <td><img src=".././assets/img/logo.png"></td>
+      <td>Search</td>
+      <td><span *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span *ngIf="!authService.isLoggedIn()"><router-outlet></router-outlet></span></td>
+      <td>Cart</td>
+    </tr>
+</table>
