@@ -15,5 +15,13 @@ export class NavBarComponent {
  
  navMenuOne= new NavMenu("Designer", this.listStringOne.split[" "]); 
  navMenuTwo= new NavMenu("Women", this.listStringTwo.split[" "]); 
-  navMenus = [this.navMenuOne,this.navMenuTwo];
+
+ navMenuThree= new NavMenu("Men", this.listStringTwo.split[" "]); 
+ navMenuFour= new NavMenu("Kids", this.listStringTwo.split[" "]); 
+ navMenuFive= new NavMenu("Home & Gifts", this.listStringTwo.split[" "]); 
+ navMenuSix= new NavMenu("Beauty", this.listStringTwo.split[" "]); 
+ navMenuSeven= new NavMenu("Sale", this.listStringTwo.split[" "]); 
+ navMenuEight= new NavMenu("What's Now", this.listStringTwo.split[" "]); 
+
+  navMenus = [this.navMenuOne,this.navMenuTwo, this.navMenuThree, this.navMenuFour, this.navMenuFive, this.navMenuSix, this.navMenuSeven, this.navMenuEight];
 }
