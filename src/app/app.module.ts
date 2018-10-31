@@ -23,6 +23,10 @@ import { NoAccessComponent } from './no-access/no-access.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DataComponent } from './data/data.component';
 
+import { environment } from 'src/environments/environment';
+import { AngularFireModule} from 'angularfire2'
+import { AngularFireDatabaseModule} from 'angularfire2/database'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +48,9 @@ import { DataComponent } from './data/data.component';
     { path: '', component: HomeComponent },
     { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminAuthGuard] },
     { path: 'login', component: LoginComponent },
-    { path: 'no-access', component: NoAccessComponent }])
+    { path: 'no-access', component: NoAccessComponent }]),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   providers: [
     //Getting order from server
@@ -53,6 +59,7 @@ import { DataComponent } from './data/data.component';
     AuthService,
     AuthGuard,
     AdminAuthGuard,
+    AUTH_PROVIDERS,
 
     // For creating a mock back-end.
     fakeBackendProvider,

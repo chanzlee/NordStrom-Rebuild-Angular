@@ -3,18 +3,17 @@ import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Injectable()
 export class OrderService {
-
-  constructor(private authHttp: AuthHttp, private http: Http) {
+  courses: AngularFireList<any>;
+  
+  constructor(private authHttp: AuthHttp, private http: Http, public db: AngularFireDatabase) {
   }
 
-  getOrders() { 
-    // it will automatically set headers.
-
-    return this.http.get('/api/orders')
-    
-    .pipe(map((response: any) => response.json()));
+  getProducts() { 
+    this.courses = this.db.list('/courses')
+    return this.courses;
   }
 }

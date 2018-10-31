@@ -50,8 +50,8 @@ export class AuthService {
     let expirationDate = jwtHelper.getTokenExpirationDate(token);
     let isExpired = jwtHelper.isTokenExpired(token);
 
-    console.log("Expiration", expirationDate);
-    console.log("isExpired", isExpired);
+    // console.log("Expiration", expirationDate);
+    // console.log("isExpired", isExpired);
     //not expired and not null === user logged in.
     return !isExpired;
   }
