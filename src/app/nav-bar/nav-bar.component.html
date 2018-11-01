@@ -17,25 +17,7 @@
           </div>
 
           <div class="col-sm-4">
-            <ul class="nav">
-              
-              <li>
-                <div class="row">
-                    <div class="col">
-                      <div ngbDropdown class="d-inline-block">
-                        <a id="dropdownBasic1" ngbDropdownToggle>Search</a>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                          <form class="form-inline searchForm">
-                            <input class="form-control" type="text" placeholder="What can we help you to find?">
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-            
-              
-              
+            <ul class="nav">            
               <li                   
               (mouseenter)="searchIsCollapsed = !searchIsCollapsed"
               (mouseleave)="searchIsCollapsed = !searchIsCollapsed"
@@ -48,16 +30,60 @@
                 <div class="my-dropdown" id="collapseSearch" [ngbCollapse]="!searchIsCollapsed">
                   <!-- <div class="card">
                     <div class="card-body"> -->
-                        <form class="form-inline searchForm">
-                          <input class="form-control" type="text" placeholder="What can we help you to find?">
-                          <input class="form-control" type="text" placeholder="What can we help you to find?">
-                          <input class="form-control" type="text" placeholder="What can we help you to find?">
+                        <form m-5 class="form-inline searchForm">
                           <input class="form-control" type="text" placeholder="What can we help you to find?">
                         </form>
                     <!-- </div>
                   </div> -->
                 </div>
               </li>
+
+
+              <li                   
+              (mouseenter)="signIsCollapsed = !signIsCollapsed"
+              (mouseleave)="signIsCollapsed = !signIsCollapsed"
+              [attr.aria-expanded]="!signIsCollapsed"
+              aria-controls="collapsesign">       
+                <span class="main-nav" *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span
+                *ngIf="!authService.isLoggedIn()"><a class="nav-link" routerLink="/login">Sign In</a></span>
+                <div class="my-dropdown" id="collapsesign" [ngbCollapse]="!signIsCollapsed">
+                  <div class="card">
+                    <div class="card-body">
+                        <a routerLink="/login" class="btn btn-dark">Sign In</a>
+                        <a>Your Account</a>
+                        <a>Wish List</a>
+                        <a>Set Your Store</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <span class="main-nav" *ngIf="authService.isLoggedIn() && authService.currentUser.admin"><a routerLink="/admin"
+                    class="nav-link">Admin</a></span>
+              </li>
+
+              <li                   
+              (mouseenter)="signIsCollapsed = !signIsCollapsed"
+              (mouseleave)="signIsCollapsed = !signIsCollapsed"
+              [attr.aria-expanded]="!signIsCollapsed"
+              aria-controls="collapsesign">
+                <img class="sign-button" src=".././assets/img/sign.png">            
+                <span class="main-nav">
+                  <a routerLink="/admin">Cart</a>
+                </span>
+                <div class="my-dropdown" id="collapsesign" [ngbCollapse]="!signIsCollapsed">
+                  <div class="card">
+                    <div class="card-body">
+                        <a routerLink="/login" class="btn btn-dark"><u>Sign in</u> to see what you may have added before.</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+
+<!-- 
               <li class="nav-item">
                 <span class="main-nav" *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span
                   *ngIf="!authService.isLoggedIn()"><a class="nav-link" routerLink="/login">Sign In</a></span>
@@ -69,12 +95,15 @@
               <li class="nav-item">
                 <span class="main-nav">
                   <a class="nav-link" href="https://secure.nordstrom.com/ShoppingBag.aspx">Cart</a></span>
-              </li>
+              </li> -->
             </ul>
           </div>
 
         </nav>
       </div>
+
+
+
       <!-- <div class="row w-100">
         <nav class="navbar navbar-expand-sm navbar-light">
     
