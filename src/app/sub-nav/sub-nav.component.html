@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light">
+<!-- <nav class="navbar navbar-expand-sm navbar-light">
 
   <ul class="navbar-nav" 
     (mouseenter)="isCollapsed1 = !isCollapsed1" 
@@ -63,7 +63,7 @@
     <a class="dropdown-item" href="#">Tastes</a>
     <a class="dropdown-item" href="#">good</a>
   </div>
-</div>
+</div> -->
 
 
 
@@ -84,33 +84,31 @@
 
 
 
-<!-- <nav class="navbar navbar-expand-sm navbar-light justify-content-between">
-
+<nav class="navbar navbar-expand-sm navbar-light justify-content-between">
   <ul class="navbar-nav" 
     *ngFor="let navMenu of navMenus"
     (mouseenter)="navMenu.isCollapsed = !navMenu.isCollapsed" 
     (mouseleave)="navMenu.isCollapsed = !navMenu.isCollapsed">
     <li class="nav-item dropdown underline-hover">
       <a  class="nav-link dropdown" 
-      id=
+      [id]=
       "navMenu.name" 
-      attr.aria-expanded="navMenu.isCollapsed" aria-controls="navMenu.name" 
+      [attr.aria-expanded]="!navMenu.isCollapsed"
         href="#">{{navMenu.name}}</a>
     </li>
   </ul>
 </nav>
-<div class="container">
+<div class="container depth">
   <div 
   *ngFor="let navMenu of navMenus">
   <div 
     class="card"
-    id="navMenu.name" 
-    ngbCollapse="navMenu.isCollapsed"  
-    aria-labelledby="navMenu.name">
+    [id]="navMenu.name"
+    [ngbCollapse]="!navMenu.isCollapsed">
     <div class="card-body">
-      <a *ngFor="let item of navMenu.list"
+      <a *ngFor="let item of objectValues(navMenu)[1]"
       class="dropdown-item" href="#">{{item}}</a>
     </div>
   </div>
   </div>
-</div> -->
+</div>

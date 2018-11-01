@@ -6,10 +6,6 @@ div {
     width: 100%;
 } */
 
-tr td{
-    padding: 20px;
-}
-
 img.seperator {
     width: 100%;
     height: auto;
@@ -25,7 +21,7 @@ div.seperator {
     width: 100%;
 }
 
-td.twoCol {
+div.twoCol {
     justify-content: center;
     margin-bottom: 20px;
     left: 8.5106%;
@@ -37,6 +33,7 @@ div.image-row {
     margin-bottom: 3%;
 }
 div.title-row {
+    justify-content: center;
     font-size: 21px;
     line-height: 1.14;
     margin: 0;
@@ -44,6 +41,7 @@ div.title-row {
     margin-bottom: 3%;
 }
 div.body-row {
+    justify-content: center;
     font-size: 15px;
     margin-top: 3%;
     line-height: 1.4;
@@ -52,7 +50,7 @@ div.body-row {
     margin-bottom: 3%;
 }
 div.link-row {
-
+    justify-content: center;
     width: 80%;
     margin-bottom: 10px;
     text-align: center;
@@ -71,4 +69,8 @@ img.data {
  
 .z-1 {
     z-index: -10;
+}
+
+.mt {
+    margin-top: 10%;
 }

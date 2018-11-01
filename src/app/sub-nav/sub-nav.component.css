@@ -1,0 +1,21 @@
+div.card-body a {
+    font-size : 0.8rem;
+    text-align: left;
+    float: left;
+}
+
+div.card-body{
+    height: 10%;
+}
+
+div.card{
+    height: 10%;
+}
+
+div.depth {
+    z-index: 0;
+}
+
+a.nav-link {
+    font-size: 0.9rem;
+}

@@ -17,6 +17,8 @@ div.row.w-100{
 div.uppernav {
     color: white;
     background-color: black;
+    font-size: 0.8rem;
+    padding-bottom: 0;
 }
 
 nav.navbar{
@@ -27,4 +29,24 @@ nav.navbar{
 
 .logo {
    text-align: left; 
+}
+
+span.main-nav {
+    color: black;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.nav li {
+    margin-right: 3%;
+}
+
+/* .my-dropdown { 
+    z-index: 999 !important; 
+} */
+
+.searchForm {
+    position: absolute;
+    z-index: 999 !important; 
 }

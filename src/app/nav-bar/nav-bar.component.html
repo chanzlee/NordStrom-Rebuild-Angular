@@ -2,7 +2,8 @@
   <div class="uppernav">
     <p>
       <strong> Free shipping. Free returns. </strong>
-      <span>All the time.</span>&nbsp;<a href="https://shop.nordstrom.com/content/shipping-methods-charges?cm_sp=merch-_-corp_freeshipping-_-swptcos_info&origin=header-top-promo">See details</a>
+      <span><u>All the time.</u></span>&nbsp;<a href="https://shop.nordstrom.com/content/shipping-methods-charges?cm_sp=merch-_-corp_freeshipping-_-swptcos_info&origin=header-top-promo">See
+        details</a>
     </p>
   </div>
 
@@ -10,28 +11,68 @@
     <div class="row w-100">
       <div class="row w-100">
         <nav class="navbar navbar-expand-md navbar-light">
+
           <div class="col-sm-8 logo">
-          <a class="navbar-brand" routerLink=""><img src=".././assets/img/logo.png"></a>
-        </div>
-        <div class="col-sm-2">
-        <form class="form-inline col-sm-3">
-          <a href="#">Search</a>
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </form>
-      </div>
-      <div class="col-sm-2">
-          <ul class="nav">
-            <li class="nav-item">
-              <span *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span *ngIf="!authService.isLoggedIn()"><a class="nav-link" routerLink="/login">Sign In</a></span>
-            </li>
-            <li class="nav-item">
-            <span *ngIf="authService.isLoggedIn() && authService.currentUser.admin"><a routerLink="/admin" class="nav-link">Admin</a></span>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://secure.nordstrom.com/ShoppingBag.aspx">Cart</a>
-            </li>
-          </ul>
+            <a class="navbar-brand" routerLink=""><img src=".././assets/img/logo.png"></a>
           </div>
+
+          <div class="col-sm-4">
+            <ul class="nav">
+              
+              <li>
+                <div class="row">
+                    <div class="col">
+                      <div ngbDropdown class="d-inline-block">
+                        <a id="dropdownBasic1" ngbDropdownToggle>Search</a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <form class="form-inline searchForm">
+                            <input class="form-control" type="text" placeholder="What can we help you to find?">
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+            
+              
+              
+              <li                   
+              (mouseenter)="searchIsCollapsed = !searchIsCollapsed"
+              (mouseleave)="searchIsCollapsed = !searchIsCollapsed"
+              [attr.aria-expanded]="!searchIsCollapsed"
+              aria-controls="collapseSearch">
+                <img class="search-button" src=".././assets/img/search.png">            
+                <span class="main-nav">
+                  <a href="#">Search</a>
+                </span>
+                <div class="my-dropdown" id="collapseSearch" [ngbCollapse]="!searchIsCollapsed">
+                  <!-- <div class="card">
+                    <div class="card-body"> -->
+                        <form class="form-inline searchForm">
+                          <input class="form-control" type="text" placeholder="What can we help you to find?">
+                          <input class="form-control" type="text" placeholder="What can we help you to find?">
+                          <input class="form-control" type="text" placeholder="What can we help you to find?">
+                          <input class="form-control" type="text" placeholder="What can we help you to find?">
+                        </form>
+                    <!-- </div>
+                  </div> -->
+                </div>
+              </li>
+              <li class="nav-item">
+                <span class="main-nav" *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span
+                  *ngIf="!authService.isLoggedIn()"><a class="nav-link" routerLink="/login">Sign In</a></span>
+              </li>
+              <li class="nav-item">
+                <span class="main-nav" *ngIf="authService.isLoggedIn() && authService.currentUser.admin"><a routerLink="/admin"
+                    class="nav-link">Admin</a></span>
+              </li>
+              <li class="nav-item">
+                <span class="main-nav">
+                  <a class="nav-link" href="https://secure.nordstrom.com/ShoppingBag.aspx">Cart</a></span>
+              </li>
+            </ul>
+          </div>
+
         </nav>
       </div>
       <!-- <div class="row w-100">
@@ -52,6 +93,6 @@
         
       </div> -->
     </div>
-  <app-sub-nav></app-sub-nav> 
+    <app-sub-nav></app-sub-nav>
   </div>
 </div>
