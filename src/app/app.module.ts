@@ -25,7 +25,9 @@ import { DataComponent } from './data/data.component';
 
 import { environment } from 'src/environments/environment';
 import { AngularFireModule} from 'angularfire2'
-import { AngularFireDatabaseModule} from 'angularfire2/database'
+import { AngularFireDatabaseModule} from 'angularfire2/database';
+import { SubNavComponent } from './sub-nav/sub-nav.component'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { AngularFireDatabaseModule} from 'angularfire2/database'
     NotFoundComponent,
     NoAccessComponent,
     NavBarComponent,
-    DataComponent
+    DataComponent,
+    SubNavComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { AngularFireDatabaseModule} from 'angularfire2/database'
     { path: 'no-access', component: NoAccessComponent }]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    NgbModule.forRoot()
   ],
   providers: [
     //Getting order from server

@@ -1,0 +1,116 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+
+  <ul class="navbar-nav" 
+    (mouseenter)="isCollapsed1 = !isCollapsed1" 
+    (mouseleave)="isCollapsed1 = !isCollapsed1">
+    <li class="nav-item dropdown underline-hover">
+      <a class="nav-link dropdown" id="dropdown001" [attr.aria-expanded]="!isCollapsed1" aria-controls="collapseExample1"
+        href="#">Jewelry & Accessories</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav" 
+  (mouseenter)="isCollapsed2 = !isCollapsed2" 
+  (mouseleave)="isCollapsed2 = !isCollapsed2">
+
+    <li class="nav-item dropdown underline-hover">
+      <a class="nav-link dropdown" id="dropdown002" [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseExample2"
+        href="#">Women</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav" 
+  (mouseenter)="isCollapsed3 = !isCollapsed3" 
+  (mouseleave)="isCollapsed3 = !isCollapsed3">
+
+    <li class="nav-item dropdown underline-hover">
+      <a class="nav-link dropdown" id="dropdown003" [attr.aria-expanded]="!isCollapsed3" aria-controls="collapseExample3"
+        href="#">Men</a>
+    </li>
+  </ul>
+
+</nav>
+
+<div
+  class="card"
+  id="collapseExample1" 
+  [ngbCollapse]="!isCollapsed1"  
+  aria-labelledby="dropdown001">
+  <div class="card-body">
+    <a class="dropdown-item" href="#">Neckles</a>
+    <a class="dropdown-item" href="#">Prings</a>
+    <a class="dropdown-item" href="#">Finger Sprinkiles</a>
+  </div>
+</div>
+<div 
+  class="card"
+  id="collapseExample2" 
+  [ngbCollapse]="!isCollapsed2"  
+  aria-labelledby="dropdown002">
+  <div class="card-body">
+    <a class="dropdown-item" href="#">Chan</a>
+    <a class="dropdown-item" href="#">Ethan</a>
+    <a class="dropdown-item" href="#">Lee</a>
+  </div>
+</div>
+<div 
+  class="card"
+  id="collapseExample3" 
+  [ngbCollapse]="!isCollapsed3"  
+  aria-labelledby="dropdown003">
+  <div class="card-body">
+    <a class="dropdown-item" href="#">ramen</a>
+    <a class="dropdown-item" href="#">Tastes</a>
+    <a class="dropdown-item" href="#">good</a>
+  </div>
+</div>
+
+
+
+      <!-- <nav class="navbar navbar-expand-sm navbar-light">
+  
+          <div class="justify-content-between">
+          <ul class="navbar-nav justify-content-between">
+            <li *ngFor="let navMenu of navMenus" class="nav-item dropdown underline-hover" ngbDropdown>
+            
+              <a class="nav-link dropdown" id="dropdown01" ngbDropdownToggle href="#">{{navMenu.name}}</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
+                <a *ngFor="let item of navMenu.list" class="dropdown-item" href="#">{{item}}</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav> -->
+
+
+
+<!-- <nav class="navbar navbar-expand-sm navbar-light justify-content-between">
+
+  <ul class="navbar-nav" 
+    *ngFor="let navMenu of navMenus"
+    (mouseenter)="navMenu.isCollapsed = !navMenu.isCollapsed" 
+    (mouseleave)="navMenu.isCollapsed = !navMenu.isCollapsed">
+    <li class="nav-item dropdown underline-hover">
+      <a  class="nav-link dropdown" 
+      id=
+      "navMenu.name" 
+      attr.aria-expanded="navMenu.isCollapsed" aria-controls="navMenu.name" 
+        href="#">{{navMenu.name}}</a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <div 
+  *ngFor="let navMenu of navMenus">
+  <div 
+    class="card"
+    id="navMenu.name" 
+    ngbCollapse="navMenu.isCollapsed"  
+    aria-labelledby="navMenu.name">
+    <div class="card-body">
+      <a *ngFor="let item of navMenu.list"
+      class="dropdown-item" href="#">{{item}}</a>
+    </div>
+  </div>
+  </div>
+</div> -->

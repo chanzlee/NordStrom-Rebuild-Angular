@@ -1,4 +1,5 @@
 export class NavMenu {
+    public isCollapsed = false;
     constructor (public name?: string, public list?: string[]) {}
 }
 
