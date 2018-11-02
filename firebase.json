@@ -1,6 +1,9 @@
 {
   "hosting": {
-    "public": "/dist/NordStrom",
+    "database": {
+      "rules": "database.rules.json"
+    },
+    "public": "dist/NordStrom",
     "ignore": [
       "firebase.json",
       "**/.*",
