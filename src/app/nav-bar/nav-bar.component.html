@@ -36,7 +36,7 @@
           <div class="card">
             <div class="card-body toggle-body">
               <form class="form-inline">
-                <input (keydown.enter)="directToProducts()" class="form-control toggle-search" type="text" placeholder="What can we help you to find?">
+                <input autofocus (keydown.enter)="directToProducts()" class="active form-control toggle-search" type="text" placeholder="What can we help you to find?">
               </form>
             </div>
           </div>
@@ -61,8 +61,11 @@
         class="hiddenDiv2" id="collapsesign">
           <div class="card">
             <div class="card-body toggle-body">
-                <!-- https://getbootstrap.com/docs/4.1/components/navs/#fill-and-justify -->
-              <a routerLink="/login" class="btn btn-dark">Sign In</a><br />
+
+              <span *ngIf="authService.isLoggedIn()"><a class="btn btn-dark" (click)="authService.logout()">Sign out</a></span><br />
+
+              <span *ngIf="!authService.isLoggedIn()"><a routerLink="/login" class="btn btn-dark">Sign In</a></span><br />
+              
               <a>Your Account</a><br />
               <a>Wish List</a><br />
               <a>Set Your Store</a><br />
@@ -99,9 +102,9 @@
           <a routerLink="/products">Cart</a>
         </span>
         <div 
-        [@expandCollapse]="!cartIsCollapsed ?'collapsedState' : 'expandedState'" 
-        class="hiddenDiv4" 
-        id="collapsecart">
+          [@expandCollapse]="!cartIsCollapsed ?'collapsedState' : 'expandedState'" 
+          class="hiddenDiv4" 
+          id="collapsecart">
           <div class="card">
             <div class="card-body toggle-body">
               <a routerLink="/login"><u>Sign in</u> to see what you may have added before.</a>
