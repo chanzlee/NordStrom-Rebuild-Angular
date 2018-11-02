@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../services/auth.service';
 import { NavMenu } from '../model/nav-menu';
+import { fadeTrigger } from 'animation';
 
 @Component({
   selector: 'app-sub-nav',
   templateUrl: './sub-nav.component.html',
-  styleUrls: ['./sub-nav.component.css']
+  styleUrls: ['./sub-nav.component.css'],
+  animations: [
+    fadeTrigger
+  ]
+
 })
 export class SubNavComponent {
 
