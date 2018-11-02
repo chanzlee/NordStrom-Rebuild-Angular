@@ -1,15 +1,21 @@
 import { trigger, transition, state, animate, style, query, stagger, animateChild, group } from '@angular/animations';
 
-export let fade = trigger('fade',[
-    state('void', style({ opacity: 0})),
-    transition('void <=> *', [
-        animate(2000)
-        // group([
-        //     query('a.dropdown-item', [
-        //         animate(2000)
-        //     ]),
-        //     query('@fade',
-        //     stagger(300, animateChild()))
-        // ])
-    ])
+export let fadeTrigger = trigger('expandCollapse', [
+    state('collapsedState', style({ 
+      height:0,
+      opacity:0,
+      paddingTop: 0,
+      paddingBottom: 0,
+      overflow:'hidden',
+    })),
+    state('expandedState', style({ 
+      height:"*",
+      opacity:1,
+    })),
+    transition('collapsedState => expandedState', [
+      animate(1000)
+    ]),
+    transition('expandedState => collapsedState', [
+      animate(1000)
+    ]),
   ])
