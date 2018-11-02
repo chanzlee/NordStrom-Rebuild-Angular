@@ -32,6 +32,8 @@ import { FooterComponent } from './footer/footer.component';
 import { masterFirebaseConfig } from './api-keys';
 import { ProductsComponent } from './products/products.component';
 
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
@@ -70,7 +72,8 @@ export const firebaseConfig = {
     ]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
     //Getting order from server
