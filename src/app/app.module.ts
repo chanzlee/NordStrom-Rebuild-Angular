@@ -30,6 +30,7 @@ import { SubNavComponent } from './sub-nav/sub-nav.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { masterFirebaseConfig } from './api-keys';
+import { ProductsComponent } from './products/products.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -51,7 +52,8 @@ export const firebaseConfig = {
     NavBarComponent,
     DataComponent,
     SubNavComponent,
-    FooterComponent
+    FooterComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -59,10 +61,13 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     RouterModule.forRoot([      
-    { path: '', component: HomeComponent },
-    { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminAuthGuard] },
-    { path: 'login', component: LoginComponent },
-    { path: 'no-access', component: NoAccessComponent }]),
+      { path: '', component: HomeComponent },
+      { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminAuthGuard] },
+      { path: 'login', component: LoginComponent },
+      { path: 'products', component: ProductsComponent },
+      { path: 'no-access', component: NoAccessComponent },
+      { path: '**', component: NoAccessComponent }
+    ]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     NgbModule.forRoot()

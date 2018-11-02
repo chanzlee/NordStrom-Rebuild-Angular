@@ -21,7 +21,7 @@
     [ngbCollapse]="!navMenu.isCollapsed">
     <div class="card-body">
       <a *ngFor="let item of objectValues(navMenu)[1]"
-      class="dropdown-item" href="#">{{item}}</a>
+      class="dropdown-item" routerLink="/products">{{item}}</a>
     </div>
   </div>
   </div>
