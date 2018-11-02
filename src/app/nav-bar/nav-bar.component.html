@@ -32,11 +32,11 @@
         <div 
           [@expandCollapse]="!searchIsCollapsed ? 'collapsedState' : expandedState"
           id="collapseSearch" 
-          >
-          <div class="card searchForm">
-            <div class="card-body">
-              <form class="form-inline searchForm">
-                <input class="form-control" type="text" placeholder="What can we help you to find?">
+          class="hiddenDiv1">
+          <div class="card">
+            <div class="card-body toggle-body">
+              <form class="form-inline">
+                <input (keydown.enter)="directToProducts()" class="form-control toggle-search" type="text" placeholder="What can we help you to find?">
               </form>
             </div>
           </div>
@@ -47,9 +47,7 @@
       <li 
         class="nav-item"
         (mouseenter)="signIsCollapsed = !signIsCollapsed" 
-        (mouseleave)="signIsCollapsed = !signIsCollapsed"
-        [attr.aria-expanded]="!signIsCollapsed" 
-        aria-controls="collapsesign">
+        (mouseleave)="signIsCollapsed = !signIsCollapsed">
         <span class="main-nav" *ngIf="authService.isLoggedIn()">
           Hi, {{ authService.currentUser.name| uppercase}}
         </span>
@@ -60,9 +58,9 @@
         </span>
         <div
         [@expandCollapse]="!signIsCollapsed ? 'collapsedState' : 'expandedState'" 
-        class="searchForm" id="collapsesign" [ngbCollapse]="!signIsCollapsed">
+        class="hiddenDiv2" id="collapsesign">
           <div class="card">
-            <div class="card-body">
+            <div class="card-body toggle-body">
                 <!-- https://getbootstrap.com/docs/4.1/components/navs/#fill-and-justify -->
               <a routerLink="/login" class="btn btn-dark">Sign In</a><br />
               <a>Your Account</a><br />
@@ -76,17 +74,17 @@
       <li 
         class="nav-item"
         (mouseenter)="adminIsCollapsed = !adminIsCollapsed" 
-        (mouseleave)="adminIsCollapsed = !adminIsCollapsed"
-        [attr.aria-expanded]="!adminIsCollapsed" 
-        aria-controls="collapseAdmin">
+        (mouseleave)="adminIsCollapsed = !adminIsCollapsed">
         <span 
           class="main-nav" 
           *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
           <a routerLink="/admin">Admin</a>
         </span>
-          <div class="searchForm" id="collapseAdmin" [ngbCollapse]="!adminIsCollapsed">
+          <div 
+            [@expandCollapse]="!adminIsCollapsed ? 'collapsedState' : 'expandedState'" 
+            class="hiddenDiv3" id="collapseAdmin">
             <div class="card">
-              <div class="card-body">
+              <div class="card-body toggle-body">
                 <a routerLink="/admin" class="btn btn-dark">Add products</a><br />
               </div>
             </div>
@@ -96,15 +94,16 @@
       <li 
         class="nav-item"
         (mouseenter)="cartIsCollapsed = !cartIsCollapsed" 
-        (mouseleave)="cartIsCollapsed = !cartIsCollapsed"
-        [attr.aria-expanded]="!cartIsCollapsed" 
-        aria-controls="collapsecart">
+        (mouseleave)="cartIsCollapsed = !cartIsCollapsed">
         <span class="main-nav">
           <a routerLink="/products">Cart</a>
         </span>
-        <div class="searchForm" id="collapsecart" [ngbCollapse]="!cartIsCollapsed">
+        <div 
+        [@expandCollapse]="!cartIsCollapsed ?'collapsedState' : 'expandedState'" 
+        class="hiddenDiv4" 
+        id="collapsecart">
           <div class="card">
-            <div class="card-body">
+            <div class="card-body toggle-body">
               <a routerLink="/login"><u>Sign in</u> to see what you may have added before.</a>
             </div>
           </div>

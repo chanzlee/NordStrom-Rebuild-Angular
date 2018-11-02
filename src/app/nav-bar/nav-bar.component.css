@@ -33,10 +33,64 @@ span.main-nav {
     font-size: 0.9rem;
 }
 
-.searchForm {
+/* .hiddenDiv {
     position: absolute;
     z-index: 10; 
+    margin-right: 50%;
+} */
+
+.hiddenDiv1 {
+    position: absolute;
+    z-index: 10; 
+    margin-right: 400%;
+    left: 20px;
+    width: 500px;
+    height: 200px;
 }
+
+input.toggle-search {
+    width: 200%;
+    border: none;
+}
+
+.toggle-body a {
+    margin-bottom: 3%;
+}
+
+.toggle-body a.btn.btn-dark {
+    width:100%;
+}
+
+
+.hiddenDiv1 div, .hiddenDiv2 div, .hiddenDiv3 div, .hiddenDiv4 div{
+    width: 100%;
+}
+
+.hiddenDiv2 {
+    position: absolute;
+    z-index: 10; 
+    width: 300px;
+    height: 200px;
+    
+}
+
+.hiddenDiv3 {
+    position: absolute;
+    z-index: 10; 
+    margin-right: 100%;
+    width: 300px;
+    height: 200px;
+    left: 50px;
+}
+.hiddenDiv4 {
+    position: absolute;
+    z-index: 10; 
+    margin-right: 160%;
+    width: 450px;
+    height: 300px;
+    left: 270px;
+}
+
 
 ul.nav li {
     margin-right: 9%;

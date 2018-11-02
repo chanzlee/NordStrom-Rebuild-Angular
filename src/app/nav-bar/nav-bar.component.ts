@@ -17,5 +17,9 @@ export class NavBarComponent{
   adminIsCollapsed: boolean;
   cartIsCollapsed: boolean;
   signIsCollapsed: boolean;
+
+  directToProducts() {
+    
+  }
   constructor(public authService: AuthService) { }
 }
