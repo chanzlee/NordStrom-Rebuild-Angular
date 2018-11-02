@@ -1,10 +1,9 @@
-<ul class="list-group">
-  <li 
-  class="list-group-item" 
-  *ngFor="let product of productSnapshot | async">
-  <img src="{{product.src}}">
-    {{product.isNew}}
-    <span *ngIf=product.isNew><p>New!</p></span>
+<!-- <ul class="list-group">
+  <li class="list-group-item" *ngFor="let product of productSnapshot | async">
+    <img src="{{product.src}}">
+    <span *ngIf=product.isNew>
+      <p>New!</p>
+    </span>
     <p>{{product.name || product}}</p>
     <p>{{product.price}}</p>
     <p>{{product.star}}</p>
@@ -25,4 +24,27 @@
   <button (click)="add(newproduct.value)">Add</button>
   <br />
   <button (click)="deleteAll()" disabled>Delete All</button>
-</div>
+</div> -->
+
+
+<!-- <div class="row justify-content-center">
+  <div class="col-6 col-md-5 col-sm-4 ">
+
+  </div>
+  <div class="col-6 col-md-5 col-sm-4 ">
+
+  </div>
+</div> -->
+
+
+<div class="row justify-content-center">
+    <div class="col-3 col-md-2 col-sm-1 side-bar">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </div>
+    <div class="col-9 col-md-8 col-sm-7 ">
+      <div class="row justify-content-bewteen grid-zone">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+      </div>
+    </div>
+  </div>
+
