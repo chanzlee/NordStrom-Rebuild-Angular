@@ -35,3 +35,20 @@ span.nav-link.dropdown {
     margin-right: 9%;
 }
 
+div.hiddenDiv {
+    position: absolute;
+    z-index: 10; 
+    width: 350%;
+    height: auto;
+    margin-left: -125%;
+}
+
+div.hiddenDiv div {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+    -webkit-column-width: 150px;
+    -moz-column-width: 150px;
+    column-width: 150px;
+    font-size: 0.9rem;
+}

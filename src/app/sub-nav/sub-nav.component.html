@@ -4,10 +4,10 @@
     (mouseenter)="navMenu.isCollapsed = !navMenu.isCollapsed" 
     (mouseleave)="navMenu.isCollapsed = !navMenu.isCollapsed">
     <li class="nav-item dropdown underline-hover">
-      <span class="nav-link dropdown" 
+      <span class="!nav-link dropdown" 
       [id]=
       "navMenu.name" 
-      [attr.aria-expanded]="!navMenu.isCollapsed"
+      [attr.aria-expanded]="navMenu.isCollapsed"
         href="#">{{navMenu.name}}</span>
     </li>
   </ul>
@@ -16,7 +16,7 @@
   <div 
   *ngFor="let navMenu of navMenus">
   <div 
-    class="card"
+    class="card hiddenDiv"
     [id]="navMenu.name"
     [ngbCollapse]="!navMenu.isCollapsed">
     <div class="card-body">

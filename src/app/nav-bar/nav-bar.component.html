@@ -50,7 +50,7 @@
         [attr.aria-expanded]="!signIsCollapsed" 
         aria-controls="collapsesign">
         <span class="main-nav" *ngIf="authService.isLoggedIn()">
-          Hi,{{ authService.currentUser.name| uppercase}}
+          Hi, {{ authService.currentUser.name| uppercase}}
         </span>
         <span *ngIf="!authService.isLoggedIn()">
           <a class="main-nav" routerLink="/login">
