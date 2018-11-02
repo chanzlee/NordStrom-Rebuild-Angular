@@ -24,14 +24,15 @@
       <li 
         class="nav-item"
         (mouseenter)="searchIsCollapsed = !searchIsCollapsed" 
-        (mouseleave)="searchIsCollapsed = !searchIsCollapsed"
-        [attr.aria-expanded]="!searchIsCollapsed" 
-        aria-controls="collapseSearch">
+        (mouseleave)="searchIsCollapsed = !searchIsCollapsed">
         <img class="search-button" src=".././assets/img/search.png">
         <span class="main-nav">
           <a href="#">Search</a>
         </span>
-        <div id="collapseSearch" [ngbCollapse]="!searchIsCollapsed">
+        <div 
+          [@expandCollapse]="!searchIsCollapsed ? 'collapsedState' : expandedState"
+          id="collapseSearch" 
+          >
           <div class="card searchForm">
             <div class="card-body">
               <form class="form-inline searchForm">
@@ -57,7 +58,9 @@
             Sign In
           </a>
         </span>
-        <div class="searchForm" id="collapsesign" [ngbCollapse]="!signIsCollapsed">
+        <div
+        [@expandCollapse]="!signIsCollapsed ? 'collapsedState' : 'expandedState'" 
+        class="searchForm" id="collapsesign" [ngbCollapse]="!signIsCollapsed">
           <div class="card">
             <div class="card-body">
                 <!-- https://getbootstrap.com/docs/4.1/components/navs/#fill-and-justify -->

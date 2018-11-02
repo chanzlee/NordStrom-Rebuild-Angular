@@ -3,12 +3,13 @@ import { trigger, transition, state, animate, style, query, stagger, animateChil
 export let fade = trigger('fade',[
     state('void', style({ opacity: 0})),
     transition('void <=> *', [
-        group([
-            query('a.dropdown-item', [
-                animate(2000)
-            ]),
-            query('@fade',
-            stagger(300, animateChild()))
-        ])
+        animate(2000)
+        // group([
+        //     query('a.dropdown-item', [
+        //         animate(2000)
+        //     ]),
+        //     query('@fade',
+        //     stagger(300, animateChild()))
+        // ])
     ])
   ])
