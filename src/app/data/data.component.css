@@ -5,6 +5,11 @@ img.no-gutters {
     height: 80px;
 }
 
+img {
+    width: 100%;
+    display: block;
+}
+
 
 /* img.seperator {
     width: 100%;
