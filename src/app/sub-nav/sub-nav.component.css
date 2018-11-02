@@ -20,26 +20,27 @@ a.nav-link {
     font-size: 1rem;
 }
 
-ul.nav {
+div.nav {
     /* width: 100%; */
     margin-right: 25%;
 }
 
-ul.navbar-nav {
+div.navbar-nav {
     margin-right: 10%;
 }
 
-span.nav-link.dropdown {
-    font-size: 1rem;
+/* span.nav-link.dropdown {
+    font-size: 0.6rem;
     display: block;
     margin-right: 9%;
-}
+} */
 
 div.hiddenDiv {
     position: absolute;
     z-index: 10; 
-    width: 350%;
+    width: 250%;
     height: auto;
+    top:70px;
     margin-left: -125%;
 }
 
@@ -50,5 +51,5 @@ div.hiddenDiv div {
     -webkit-column-width: 150px;
     -moz-column-width: 150px;
     column-width: 150px;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
 }

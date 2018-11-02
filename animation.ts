@@ -13,9 +13,9 @@ export let fadeTrigger = trigger('expandCollapse', [
       opacity:1,
     })),
     transition('collapsedState => expandedState', [
-      animate(300)
+      animate(200)
     ]),
     transition('expandedState => collapsedState', [
-      animate(200)
+      animate(150)
     ]),
   ])

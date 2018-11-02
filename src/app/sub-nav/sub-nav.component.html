@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-light justify-content-center">
-  <ul class="navbar-nav" 
+  <div class="navbar-nav" 
     *ngFor="let navMenu of navMenus"
-    (mouseenter)="navMenu.isCollapsed = !navMenu.isCollapsed" 
+    (mouseenter)="navMenu.isCollapsed = !navMenu.isCollapsed"
     (mouseleave)="navMenu.isCollapsed = !navMenu.isCollapsed">
     <li class="nav-item dropdown underline-hover">
       <span class="!nav-link dropdown" 
@@ -9,19 +9,17 @@
       "navMenu.name" 
         href="#">{{navMenu.name}}</span>
     </li>
-  </ul>
-</nav>
-<div class="container depth">
-  <div 
-  *ngFor="let navMenu of navMenus">
-  <div
-    [@expandCollapse]="!navMenu.isCollapsed ? 'collapsedState' : 'expandedState'" 
-    class="card hiddenDiv"
-    [id]="navMenu.name">
-    <div class="card-body">
-      <a *ngFor="let item of objectValues(navMenu)[1]"
-      class="dropdown-item" routerLink="/products">{{item}}</a>
+  
+  <div class="container depth">
+      <div
+        [@expandCollapse]="!navMenu.isCollapsed ? 'collapsedState' : 'expandedState'" 
+        class="card hiddenDiv"
+        [id]="navMenu.name">
+        <div class="card-body">
+          <a *ngFor="let item of objectValues(navMenu)[1]"
+          class="dropdown-item" routerLink="/products">{{item}}</a>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-</div>
+</nav>
