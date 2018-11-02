@@ -32,8 +32,6 @@ ul.navbar-nav {
 span.nav-link.dropdown {
     font-size: 1rem;
     display: block;
+    margin-right: 9%;
 }
 
-.nav li {
-    margin-right: 6%;
-}

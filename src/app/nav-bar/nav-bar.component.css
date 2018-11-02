@@ -3,7 +3,6 @@ div {
     font-size: 1.3rem;
     padding: .4rem 0;
     text-align: center;
-    /* width: 100%; */
 }
 
 div nav.navbar {
@@ -39,6 +38,6 @@ span.main-nav {
     z-index: 10; 
 }
 
-ul.nav {
-    maring-right: 5%;
+ul.nav li {
+    margin-right: 9%;
 }

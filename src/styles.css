@@ -6,11 +6,6 @@ div.row {
     margin: 5px;
 }
 
-div.text-center::before{
-    content:"";
-    margin-left:50px;
-} 
-
 a {
     color: black;
 }

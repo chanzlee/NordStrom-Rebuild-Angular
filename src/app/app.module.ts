@@ -28,6 +28,7 @@ import { AngularFireModule} from 'angularfire2'
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { SubNavComponent } from './sub-nav/sub-nav.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NoAccessComponent,
     NavBarComponent,
     DataComponent,
-    SubNavComponent
+    SubNavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
