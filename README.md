@@ -23,6 +23,7 @@ Rebuild NordStrom website using Angular 5.
     // start application
     > ng serve --open
 ```
+4. Otherwise, you can browse to https://nordstrom-7d20d.firebaseapp.com/
 
 ## Specifications
 
@@ -36,6 +37,7 @@ Rebuild NordStrom website using Angular 5.
 * Id: kennethdu3@gmail.com / pw: 1234 is customer account.
 * There will be shopping page where it will display product objects using ngFor, which has price,size,quantity,review properties.
 * User can see the collected item at the cart page.
+* Actively deployed on firebase, with database linked.
 
 
 ## Components

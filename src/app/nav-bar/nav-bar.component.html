@@ -53,7 +53,7 @@
           Hi,{{ authService.currentUser.name| uppercase}}
         </span>
         <span *ngIf="!authService.isLoggedIn()">
-          <a class="nav-link" routerLink="/login">
+          <a class="main-nav" routerLink="/login">
             Sign In
           </a>
         </span>
