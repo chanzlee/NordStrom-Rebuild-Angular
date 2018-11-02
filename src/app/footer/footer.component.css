@@ -8,3 +8,14 @@ div.footer-content {
     padding-top: 2.5%;
     font-size: 1rem;
 }
+
+ul.footer-ul {
+    list-style-type: none;
+}
+ul.footer-ul li {
+    margin-bottom: 5%;
+}
+
+ul.footer-ul li:first-child{
+    font-weight: 700;
+}
