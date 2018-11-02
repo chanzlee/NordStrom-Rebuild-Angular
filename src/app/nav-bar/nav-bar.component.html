@@ -46,13 +46,13 @@
               aria-controls="collapsesign">       
                 <span class="main-nav" *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span
                 *ngIf="!authService.isLoggedIn()"><a class="nav-link" routerLink="/login">Sign In</a></span>
-                <div class="my-dropdown" id="collapsesign" [ngbCollapse]="!signIsCollapsed">
+                <div class="searchForm" id="collapsesign" [ngbCollapse]="!signIsCollapsed">
                   <div class="card">
                     <div class="card-body">
-                        <a routerLink="/login" class="btn btn-dark">Sign In</a>
-                        <a>Your Account</a>
-                        <a>Wish List</a>
-                        <a>Set Your Store</a>
+                        <a routerLink="/login" class="btn btn-dark">Sign In</a><br/>
+                        <a>Your Account</a><br/>
+                        <a>Wish List</a><br/>
+                        <a>Set Your Store</a><br/>
                     </div>
                   </div>
                 </div>
@@ -64,18 +64,18 @@
               </li>
 
               <li                   
-              (mouseenter)="signIsCollapsed = !signIsCollapsed"
-              (mouseleave)="signIsCollapsed = !signIsCollapsed"
-              [attr.aria-expanded]="!signIsCollapsed"
-              aria-controls="collapsesign">
-                <img class="sign-button" src=".././assets/img/sign.png">            
+              (mouseenter)="cartIsCollapsed = !cartIsCollapsed"
+              (mouseleave)="cartIsCollapsed = !cartIsCollapsed"
+              [attr.aria-expanded]="!cartIsCollapsed"
+              aria-controls="collapsecart">
+                <img class="cart-button" src=".././assets/img/cart.png">            
                 <span class="main-nav">
                   <a routerLink="/admin">Cart</a>
                 </span>
-                <div class="my-dropdown" id="collapsesign" [ngbCollapse]="!signIsCollapsed">
+                <div class="searchForm" id="collapsecart" [ngbCollapse]="!cartIsCollapsed">
                   <div class="card">
                     <div class="card-body">
-                        <a routerLink="/login" class="btn btn-dark"><u>Sign in</u> to see what you may have added before.</a>
+                        <a routerLink="/login"><u>Sign in</u> to see what you may have added before.</a>
                     </div>
                   </div>
                 </div>

@@ -12,9 +12,9 @@ div.card{
     height: 10%;
 }
 
-div.depth {
+/* div.depth {
     z-index: 0;
-}
+} */
 
 a.nav-link {
     font-size: 0.9rem;

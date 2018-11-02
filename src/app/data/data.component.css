@@ -1,17 +1,16 @@
-div {
-    color: #393939;
+
+
+img.no-gutters {
+    width: 100%;
+    height: 80px;
 }
 
-/* table.custom tr, table.custom td {
-    width: 100%;
-} */
 
-img.seperator {
+/* img.seperator {
     width: 100%;
     height: auto;
     display: block;
     cursor: pointer;
-    z-index: 1;
 }
 
 div.seperator {
@@ -73,4 +72,4 @@ img.data {
 
 .mt {
     margin-top: 10%;
-}
+} */
