@@ -10,10 +10,6 @@ div nav.navbar {
     width: 100%;
 }
 
-div.row.w-100{
-    margin: 5px;
-}
-
 div.uppernav {
     color: white;
     background-color: black;
@@ -38,15 +34,11 @@ span.main-nav {
     font-size: 0.9rem;
 }
 
-.nav li {
-    margin-right: 3%;
-}
-
-/* .my-dropdown { 
-    z-index: 999 !important; 
-} */
-
 .searchForm {
     position: absolute;
-    z-index: 999 !important; 
+    z-index: 10; 
+}
+
+ul.nav {
+    maring-right: 5%;
 }

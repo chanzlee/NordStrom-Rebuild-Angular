@@ -8,6 +8,25 @@ img.no-gutters {
 img {
     width: 100%;
     display: block;
+    margin-bottom: 5px;
+}
+
+.data-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 30px
+}
+
+.data-body {
+    font-size: 1rem;
+}
+
+.data-link {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 100px;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 

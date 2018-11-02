@@ -21,26 +21,34 @@
   <div class="col-md-2  col-xs-1">
     <!-- Search -->
     <ul class="nav">
-      <li (mouseenter)="searchIsCollapsed = !searchIsCollapsed" (mouseleave)="searchIsCollapsed = !searchIsCollapsed"
-        [attr.aria-expanded]="!searchIsCollapsed" aria-controls="collapseSearch">
+      <li 
+        class="nav-item"
+        (mouseenter)="searchIsCollapsed = !searchIsCollapsed" 
+        (mouseleave)="searchIsCollapsed = !searchIsCollapsed"
+        [attr.aria-expanded]="!searchIsCollapsed" 
+        aria-controls="collapseSearch">
         <img class="search-button" src=".././assets/img/search.png">
         <span class="main-nav">
           <a href="#">Search</a>
         </span>
         <div id="collapseSearch" [ngbCollapse]="!searchIsCollapsed">
-          <div class="card">
-
-            <form class="form-inline searchForm">
-              <input class="form-control" type="text" placeholder="What can we help you to find?">
-            </form>
-
+          <div class="card searchForm">
+            <div class="card-body">
+              <form class="form-inline searchForm">
+                <input class="form-control" type="text" placeholder="What can we help you to find?">
+              </form>
+            </div>
           </div>
         </div>
       </li>
 
 
-      <li (mouseenter)="signIsCollapsed = !signIsCollapsed" (mouseleave)="signIsCollapsed = !signIsCollapsed"
-        [attr.aria-expanded]="!signIsCollapsed" aria-controls="collapsesign">
+      <li 
+        class="nav-item"
+        (mouseenter)="signIsCollapsed = !signIsCollapsed" 
+        (mouseleave)="signIsCollapsed = !signIsCollapsed"
+        [attr.aria-expanded]="!signIsCollapsed" 
+        aria-controls="collapsesign">
         <span class="main-nav" *ngIf="authService.isLoggedIn()">
           Hi,{{ authService.currentUser.name| uppercase}}
         </span>
@@ -61,14 +69,32 @@
         </div>
       </li>
 
-      <li class="nav-item">
-        <span class="main-nav" *ngIf="authService.isLoggedIn() && authService.currentUser.admin"><a routerLink="/admin"
-            class="nav-link">Admin</a></span>
+      <li 
+        class="nav-item"
+        (mouseenter)="adminIsCollapsed = !adminIsCollapsed" 
+        (mouseleave)="adminIsCollapsed = !adminIsCollapsed"
+        [attr.aria-expanded]="!adminIsCollapsed" 
+        aria-controls="collapseAdmin">
+        <span 
+          class="main-nav" 
+          *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
+          <a routerLink="/admin">Admin</a>
+        </span>
+          <div class="searchForm" id="collapseAdmin" [ngbCollapse]="!adminIsCollapsed">
+            <div class="card">
+              <div class="card-body">
+                <a routerLink="/admin" class="btn btn-dark">Add products</a><br />
+              </div>
+            </div>
+          </div>
       </li>
 
-      <li (mouseenter)="cartIsCollapsed = !cartIsCollapsed" (mouseleave)="cartIsCollapsed = !cartIsCollapsed"
-        [attr.aria-expanded]="!cartIsCollapsed" aria-controls="collapsecart">
-        <img class="cart-button" src=".././assets/img/cart.png">
+      <li 
+        class="nav-item"
+        (mouseenter)="cartIsCollapsed = !cartIsCollapsed" 
+        (mouseleave)="cartIsCollapsed = !cartIsCollapsed"
+        [attr.aria-expanded]="!cartIsCollapsed" 
+        aria-controls="collapsecart">
         <span class="main-nav">
           <a routerLink="/admin">Cart</a>
         </span>
