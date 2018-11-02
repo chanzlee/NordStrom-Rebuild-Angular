@@ -17,7 +17,7 @@ export class ProductsComponent {
   // subscription: Subscription;
 
   constructor (private authService: AuthService, public db: AngularFireDatabase) {
-    // this.products = db.list('/products')
+    this.productsRef = db.list('/products')
     // this.products$ = this.products.valueChanges();
     // this.product$ = db.object('/products/0').valueChanges();
     // console.log(this.products$);

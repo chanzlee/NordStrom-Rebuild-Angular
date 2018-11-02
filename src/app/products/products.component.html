@@ -7,12 +7,12 @@
     <span *ngIf=product.isNew><p>New!</p></span>
     <p>{{product.name || product}}</p>
     <p>{{product.price}}</p>
-    <p>{{product.rating}}</p>
+    <p>{{product.star}}</p>
     <div class="rating">
       <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
     </div>
     <span>({{product.review}})</span>
-    <div ngIf="authService.isLoggedIn() && authService.currentUser.admin">
+    <div *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
       <input type="text" #updateproduct [value]="product.name" />
       <button (click)="update(product.key, updateproduct.value)">Update</button>
       <button (click)="delete(product.key)">Delete</button>
@@ -20,7 +20,7 @@
   </li>
 </ul>
 <br />
-<div ngIf="authService.isLoggedIn() && authService.currentUser.admin">
+<div *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
   <input type="text" #newproduct />
   <button (click)="add(newproduct.value)">Add</button>
   <br />
