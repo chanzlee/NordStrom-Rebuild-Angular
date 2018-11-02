@@ -29,6 +29,19 @@ img {
     cursor: pointer;
 }
 
+.absolute {
+    position: absolute;
+}
+ 
+.z-1 {
+    z-index: -1;
+}
+
+.inner-data {
+    margin: 10%;
+    width: 20%;
+}
+
 
 /* img.seperator {
     width: 100%;
@@ -44,41 +57,7 @@ div.seperator {
     width: 100%;
 }
 
-div.twoCol {
-    justify-content: center;
-    margin-bottom: 20px;
-    left: 8.5106%;
-    width: 31.9148%;
-}
 
-div.image-row {
-    width: 80%;
-    margin-bottom: 3%;
-}
-div.title-row {
-    justify-content: center;
-    font-size: 21px;
-    line-height: 1.14;
-    margin: 0;
-    width: 80%;
-    margin-bottom: 3%;
-}
-div.body-row {
-    justify-content: center;
-    font-size: 15px;
-    margin-top: 3%;
-    line-height: 1.4;
-    width: 80%;
-    text-align: center;
-    margin-bottom: 3%;
-}
-div.link-row {
-    justify-content: center;
-    width: 80%;
-    margin-bottom: 10px;
-    text-align: center;
-    text-decoration: underline;
-}
 
 img.data {
     clear: both;

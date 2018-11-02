@@ -96,7 +96,7 @@
         [attr.aria-expanded]="!cartIsCollapsed" 
         aria-controls="collapsecart">
         <span class="main-nav">
-          <a routerLink="/admin">Cart</a>
+          <a routerLink="#">Cart</a>
         </span>
         <div class="searchForm" id="collapsecart" [ngbCollapse]="!cartIsCollapsed">
           <div class="card">
@@ -109,69 +109,3 @@
     </ul>
   </div>
 </div>
-
-<!-- <div class="row justify-content-between">
-    <nav class="navbar navbar-expand-md navbar-light">
-
-      <div class="col-sm-8 logo">
-        <a class="navbar-brand" routerLink=""><img src=".././assets/img/logo.png"></a>
-      </div>
-
-      <div class="col-sm-4">
-        <ul class="nav">
-          <li (mouseenter)="searchIsCollapsed = !searchIsCollapsed" (mouseleave)="searchIsCollapsed = !searchIsCollapsed"
-            [attr.aria-expanded]="!searchIsCollapsed" aria-controls="collapseSearch">
-            <img class="search-button" src=".././assets/img/search.png">
-            <span class="main-nav">
-              <a href="#">Search</a>
-            </span>
-            <div class="my-dropdown" id="collapseSearch" [ngbCollapse]="!searchIsCollapsed">
-
-
-              <form m-5 class="form-inline searchForm">
-                <input class="form-control" type="text" placeholder="What can we help you to find?">
-              </form>
-
-            </div>
-          </li>
-
-
-          <li (mouseenter)="signIsCollapsed = !signIsCollapsed" (mouseleave)="signIsCollapsed = !signIsCollapsed"
-            [attr.aria-expanded]="!signIsCollapsed" aria-controls="collapsesign">
-            <span class="main-nav" *ngIf="authService.isLoggedIn()">Hi,{{ authService.currentUser.name| uppercase}}</span><span
-              *ngIf="!authService.isLoggedIn()"><a class="nav-link" routerLink="/login">Sign In</a></span>
-            <div class="searchForm" id="collapsesign" [ngbCollapse]="!signIsCollapsed">
-              <div class="card">
-                <div class="card-body">
-                  <a routerLink="/login" class="btn btn-dark">Sign In</a><br />
-                  <a>Your Account</a><br />
-                  <a>Wish List</a><br />
-                  <a>Set Your Store</a><br />
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <span class="main-nav" *ngIf="authService.isLoggedIn() && authService.currentUser.admin"><a routerLink="/admin"
-                class="nav-link">Admin</a></span>
-          </li>
-
-          <li (mouseenter)="cartIsCollapsed = !cartIsCollapsed" (mouseleave)="cartIsCollapsed = !cartIsCollapsed"
-            [attr.aria-expanded]="!cartIsCollapsed" aria-controls="collapsecart">
-            <img class="cart-button" src=".././assets/img/cart.png">
-            <span class="main-nav">
-              <a routerLink="/admin">Cart</a>
-            </span>
-            <div class="searchForm" id="collapsecart" [ngbCollapse]="!cartIsCollapsed">
-              <div class="card">
-                <div class="card-body">
-                  <a routerLink="/login"><u>Sign in</u> to see what you may have added before.</a>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div> -->
