@@ -74,14 +74,14 @@ a.btn.btn-dark {
     z-index: 10; 
     width: 300px;
     height: 170px;
-    right: 100px;
+    right: 80px;
 }
 
 .hiddenDiv3 {
     position: absolute;
     z-index: 10; 
     margin-right: 100%;
-    width: 280px;
+    width: 240px;
     height: 80px;
     right: -100%;
 }
@@ -89,8 +89,8 @@ a.btn.btn-dark {
     position: absolute;
     z-index: 10; 
     margin-right: 160%;
-    width: 450px;
-    height: 300px;
+    width: 370px;
+    height: 280px;
     left: -130px;
 }
 
