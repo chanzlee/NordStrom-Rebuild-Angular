@@ -3,6 +3,7 @@ import { AuthService } from './../services/auth.service';
 import { NavMenu } from '../model/nav-menu';
 import { fadeTrigger } from 'animation';
 import { transition, state, style, trigger, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -13,13 +14,15 @@ import { transition, state, style, trigger, animate } from '@angular/animations'
   ]
 })
 export class NavBarComponent{
+  constructor(public authService: AuthService, private router: Router) { }
+
   searchIsCollapsed: boolean;
   adminIsCollapsed: boolean;
   cartIsCollapsed: boolean;
   signIsCollapsed: boolean;
 
   directToProducts() {
-    
+    this.router.navigate(['/login']);
   }
-  constructor(public authService: AuthService) { }
+  
 }
