@@ -33,6 +33,7 @@ import { masterFirebaseConfig } from './api-keys';
 import { ProductsComponent } from './products/products.component';
 
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -55,7 +56,8 @@ export const firebaseConfig = {
     DataComponent,
     SubNavComponent,
     FooterComponent,
-    ProductsComponent
+    ProductsComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,

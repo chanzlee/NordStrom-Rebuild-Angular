@@ -7,7 +7,7 @@
     grid-auto-rows: 450px;
     justify-items: stretch;
     justify-content: space-evenly;
-    align-items: stretch;
+    align-items: start;
     align-content: space-evenly;
     grid-auto-flow: row;
 }
