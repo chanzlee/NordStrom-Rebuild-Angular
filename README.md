@@ -64,6 +64,7 @@ Deployed at https://nordstrom-7d20d.firebaseapp.com/
 * popperJS
 * Jasmin
 * Karma
+* Firebase hosting/real-time data base
 
 ## Support and contact details
 
