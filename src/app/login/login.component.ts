@@ -29,4 +29,8 @@ export class LoginComponent {
           this.invalidLogin = true; 
       });
   }
+
+  singUp(credential) {
+    console.log(credential)
+  }
 }

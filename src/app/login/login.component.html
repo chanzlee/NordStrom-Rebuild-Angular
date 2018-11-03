@@ -1,12 +1,47 @@
-<form class="form-signin" #f="ngForm" (ngSubmit)="signIn(f.value)">
-  <!-- So value of this argument has to properties, email and pw -->
-  <h2 class="form-signin-heading">Please sign in</h2>
+<div class="row justify-content-center">
+  <div class="col-5 col-sm-4"> 
+    <form class="form-signin" #f="ngForm" (ngSubmit)="signIn(f.value)">
+      <!-- So value of this argument has to properties, email and pw -->
+      <h2 class="form-signin-heading">Sign in</h2>
+    
+      <!-- Only if invalid log in is true -->
+      <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
+      <label for="inputEmail">Email</label>
+      <input type="email" id="inputEmail" name="email" ngModel class="form-control" required autofocus>
+      <label for="inputPassword">Password</label>
+      <input type="password" id="inputPassword" name="password" ngModel class="form-control" required>
+      
 
-  <!-- Only if invalid log in is true -->
-  <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" name="email" ngModel class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Password" required>
-  <button class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
-</form>
+      <div class="gray-light">
+        <p><u>Forgot password?</u></p>
+        <p>By signing in to your account, you agree to our <u>Policy and Terms & Conditions.</u></p>
+      </div>
+
+      <button class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
+    </form>
+
+  </div>
+  <div class="col-5 col-sm-4">
+      <form disabled class="form-signup" #f="ngForm" (ngSubmit)="signUp(f.value)">
+          <h2 class="form-signup-heading">Create Account</h2>
+          <img class="signup-img"src="../../assets/img/signup.png">
+
+          <label for="inputFirstName">FirstName</label>
+          <input type="FirstName" id="inputFirstName" name="FirstName" ngModel class="form-control" required autofocus>
+          <label for="inputLastName">LastName</label>
+          <input type="LastName" id="inputLastName" name="LastName" ngModel class="form-control" required autofocus>
+
+          <div class="gray-light">
+            <p>By tapping Create Account, you agree to us sending you an automated text to confirm your mobile number. Your number must be from the U.S., Canada or Puerto Rico.</p>
+          </div>
+
+          <label for="inputEmail">Email</label>
+          <input type="email" id="inputEmail" name="email" ngModel class="form-control" required>
+          <label for="inputPassword">Password</label>
+          <input type="password" id="inputPassword" name="password" ngModel class="form-control" required>
+          
+    
+          <button disabled class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
+        </form>
+  </div>
+</div>
