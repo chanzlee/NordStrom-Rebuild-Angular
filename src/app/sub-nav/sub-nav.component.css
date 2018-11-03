@@ -17,7 +17,7 @@ div.card{
 } */
 
 a.nav-link {
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 div.nav {
@@ -26,7 +26,7 @@ div.nav {
 }
 
 div.navbar-nav {
-    margin-right: 10%;
+    margin-right: 4%;
 }
 
 /* span.nav-link.dropdown {
@@ -41,7 +41,7 @@ div.hiddenDiv {
     width: 250%;
     height: auto;
     top:70px;
-    margin-left: -125%;
+    margin-left: -130%;
 }
 
 div.hiddenDiv div {
@@ -52,4 +52,7 @@ div.hiddenDiv div {
     -moz-column-width: 150px;
     column-width: 150px;
     font-size: 0.6rem;
+}
+li.nav-item {
+    font-size: 0.8rem;
 }

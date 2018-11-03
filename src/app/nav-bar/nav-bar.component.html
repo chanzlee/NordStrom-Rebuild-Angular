@@ -51,8 +51,8 @@
         <span class="main-nav" *ngIf="authService.isLoggedIn()">
           Hi, {{ authService.currentUser.name| uppercase}}
         </span>
-        <span *ngIf="!authService.isLoggedIn()">
-          <a class="main-nav" routerLink="/login">
+        <span class="main-nav"*ngIf="!authService.isLoggedIn()">
+          <a routerLink="/login">
             Sign In
           </a>
         </span>
