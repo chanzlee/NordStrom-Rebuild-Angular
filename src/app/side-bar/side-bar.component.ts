@@ -1,10 +1,14 @@
 import { Component} from '@angular/core';
 import { NavMenu } from '../model/nav-menu';
+import { fadeTrigger } from 'animation';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.css']
+  styleUrls: ['./side-bar.component.css'],
+  animations: [
+    fadeTrigger
+  ]
 })
 export class SideBarComponent{
   listString1="Men, All Men, Clothing, Shoes, Accessories, Designer, Grooming & Cologne, New Arrivals, Bestsellers, Sale, Extended Sizes, Big & Tall, Explore More, Holiday Gifts for Him, Topman & Men's Trend, Nike Men's Project, Pop-In: MCM, How-Tos & Style Advice, Shop By Occasion, Men's Brands, Topman, UGG Shop".split(", ");
