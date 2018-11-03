@@ -30,7 +30,7 @@ export class LoginComponent {
       });
   }
 
-  singUp(credential) {
+  signUp(credential) {
     console.log(credential)
   }
 }

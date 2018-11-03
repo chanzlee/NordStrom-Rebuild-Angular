@@ -45,12 +45,12 @@ h2.form-signin-heading,h2.form-signup-heading {
 button.btn.btn-dark{
   margin-top: 5%;
   background-color: black;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   height: 45px;
 }
 .gray-light{
   margin-bottom: 15%;
   color: #333;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-decoration: underline;
 }
