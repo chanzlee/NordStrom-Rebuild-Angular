@@ -10,9 +10,11 @@ export class AuthService {
   }
 
   login(credentials) { 
+    console.log(credentials);
     //post to validate credential
    return this.http.post('/api/authenticate', 
       JSON.stringify(credentials))
+      
       //have to return true or false.
       .pipe(map(response => {
         //if matches, return hard coded jwt, returns null if not matches.

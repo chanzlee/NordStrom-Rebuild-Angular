@@ -1,23 +1,37 @@
-<div>
-  <p>Get It Fast: </p>
+<div class="side-bar">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Products</li>
+    </ol>
+  </nav>
   <div 
   *ngFor="let subcriteria of criterias"
+  (click)="subcriteria.isCollapsed = !subcriteria.isCollapsed"
   class="side-heading">
-  {{ subcriteria.name }}
-    <span (click)="subcriteria.isCollapsed = !subcriteria.isCollapsed"*ngIf=!subcriteria.isCollapsed>+</span>
-    <span (click)="subcriteria.isCollapsed = !subcriteria.isCollapsed"*ngIf=subcriteria.isCollapsed>-</span>
-    <div
-      [@expandCollapse]="!subcriteria.isCollapsed ? 'collapsedState' : 'expandedState'"
-      class="hiddenDiv"
-      [id]="subcriteria.name">
-      <li *ngFor="let listItem of subcriteria.list">
-        {{listItem}}
-      </li>
-    </div> 
+  <div class="row showingDiv justify-content-end">
+    <div class="col-md-10">
+        {{ subcriteria.name }}
+    </div>
+    <div class="col-md-2">
+        <span class="toggle-button" *ngIf=!subcriteria.isCollapsed>+</span>
+        <span class="toggle-button" *ngIf=subcriteria.isCollapsed>-</span>
+    </div>
+  </div>
+    <div class="row">
+        <div
+        [@expandCollapse]="!subcriteria.isCollapsed ? 'collapsedState' : 'expandedState'"
+        class="hiddenDiv button-block"
+        [id]="subcriteria.name">
+        <li *ngFor="let listItem of subcriteria.list">
+          {{listItem}}
+        </li>
+      </div> 
+    </div>
   </div>
 
-  <div class="light-underline-font">
+  <div>
     <span>Feedback on these filters?</span><br />
-    <span>Let us know.</span>
+    <span><u>Let us know.</u></span>
   </div>
 </div>
