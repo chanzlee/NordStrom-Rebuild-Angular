@@ -26,6 +26,8 @@
           <h2 class="form-signup-heading">Create Account</h2>
           <img class="signup-img"src="../../assets/img/signup.png">
 
+          <div *ngIf="invalidSignUp" class="alert alert-danger">Failed to Create Account</div>
+
           <label for="inputFirstName">First name</label>
           <input type="FirstName" id="inputFirstName" name="FirstName" ngModel class="form-control" required autofocus>
           <label for="inputLastName">Last name</label>

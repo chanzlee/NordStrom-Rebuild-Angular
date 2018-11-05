@@ -64,7 +64,7 @@
 
               <span *ngIf="authService.isLoggedIn()"><a class="btn btn-dark" (click)="authService.logout()">Sign out</a></span><br />
 
-              <span *ngIf="!authService.isLoggedIn()"><a routerLink="/login" class="btn btn-dark">Sign In</a></span><br />
+              <span *ngIf="!authService.isLoggedIn()"><a routerLink="/login" class="btn btn-dark">Sign In</a></span>
               
               <a>Your Account</a><br />
               <a>Wish List</a><br />

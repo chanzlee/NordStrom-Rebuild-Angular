@@ -49,8 +49,31 @@ export function fakeBackendFactory(
             new ResponseOptions({ status: 401 })
           ));
         }
-      }
 
+    
+        } 
+
+
+          if (connection.request.url.endsWith('/users') && connection.request.method === RequestMethod.Post) {
+          let body = JSON.parse(connection.request.getBody());
+          this.productsRef.push({ email: body.email,
+                                  password : body.password
+          });
+          token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkxIiwibmFtZSI6Iktlbm5ldGggRHUiLCJhZG1pbiI6ZmFsc2V9.aTzIHqehcVxLu61b_nXHx-0m1zdRpZzygWfyb4OBK_M';
+          connection.mockRespond(new Response(
+            new ResponseOptions({
+              status: 200,
+              body: { token: token }
+          })));
+
+          // for now, jwt is not translated inside the app. When users sign up, it just send response of kenneth user information.
+          //  https://blog.angular-university.io/angular-jwt/
+        } else {
+          //Bad user request.
+          connection.mockRespond(new Response(
+            new ResponseOptions({ status: 401 })
+          ));
+        }
 
 
        // 

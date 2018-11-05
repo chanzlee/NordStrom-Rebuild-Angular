@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class LoginComponent {
   invalidLogin: boolean; 
+  invalidSignUp: boolean;
 
   constructor(
     private router: Router, 
@@ -31,6 +32,16 @@ export class LoginComponent {
   }
 
   signUp(credential) {
-    console.log(credential)
+    this.authService.signUp(credential)
+    .subscribe(result => { 
+      //depend on whether this is true or not, navigate or throw error.
+      if (result) {
+        //instead of redirect hompage every user, check whether there are queryparam passed along as argument and try redirect them to the url.
+        let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+        this.router.navigate([returnUrl || '/']);
+      }
+      else  
+        this.invalidSignUp = true; 
+    });
   }
 }

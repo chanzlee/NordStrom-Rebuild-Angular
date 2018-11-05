@@ -1,7 +1,8 @@
 import { OrderService } from './../services/order.service';
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { AngularFireDatabase, AngularFireList} from 'angularfire2/database'
 import { Observable } from 'rxjs';import { map } from 'rxjs/operators';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -16,7 +17,10 @@ export class AdminComponent{
   productSnapshot;
 
 
-  constructor (private orderService: OrderService, public db: AngularFireDatabase) {
+  constructor (private orderService: OrderService,
+               public db: AngularFireDatabase,
+               private authService: AuthService
+               ) {
     this.products = db.list('/products')
     this.products$ = this.products.valueChanges();
     this.product$ = db.object('/products/0').valueChanges();

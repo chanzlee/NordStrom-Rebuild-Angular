@@ -1,16 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { JwtHelper } from 'angular2-jwt';
-import { map } from 'rxjs/operators';
+import { AngularFireDatabase, AngularFireList} from 'angularfire2/database';
+import { Observable } from 'rxjs';import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
   // dependent on http service
-  constructor(private http: Http) {
-  }
+
+  usersRef: AngularFireList<any>;
+  userSnapshot: Observable<any[]>;
+
+  constructor(private http: Http, private authService: AuthService, public db: AngularFireDatabase) {
+      this.usersRef = db.list('/users')
+      this.userSnapshot = this.usersRef.snapshotChanges().pipe(map(changes => {
+        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      }));
+    }
 
   login(credentials) { 
-    console.log(credentials);
     //post to validate credential
    return this.http.post('/api/authenticate', 
       JSON.stringify(credentials))
@@ -63,6 +71,24 @@ export class AuthService {
     let token = localStorage.getItem('token');
     if (!token) return null;
     return new JwtHelper().decodeToken(token);
+  }
+
+  signUp(credentials) { 
+    //post to validate credential
+   return this.http.post('/users', 
+      JSON.stringify(credentials))
+      
+      //have to return true or false.
+      .pipe(map(response => {
+        //if matches, return hard coded jwt, returns null if not matches.
+        let result = response.json();
+        if (result && result.token) {
+          //If jwt is truthy, store in local storage.
+          localStorage.setItem('token',result.token);
+          //and return true, which means mapping response object to boolean
+          return true;
+        }
+      }));
   }
 }
 
