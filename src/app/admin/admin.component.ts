@@ -17,7 +17,7 @@ export class AdminComponent{
   productSnapshot;
 
 
-  constructor (private orderService: OrderService,
+  constructor (public orderService: OrderService,
                public db: AngularFireDatabase,
                private authService: AuthService
                ) {
@@ -31,8 +31,17 @@ export class AdminComponent{
   }
   
   add(product: HTMLInputElement) { 
-    this.products.push({ name: product });
-    product.value = '';
+    let newProduct = product.form.controls;
+    console.log();
+
+    this.products.push({
+      name: newProduct.name,
+      price: newProduct.price,
+      isNew: newProduct,
+      src: newProduct.src,
+      star: newProduct.star,
+    });
+    
   }
 
   update(key: string, product: string) { 

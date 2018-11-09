@@ -34,6 +34,7 @@ import { ProductsComponent } from './products/products.component';
 
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { AUTH_PROVIDERS } from 'angular2-jwt';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -84,6 +85,7 @@ export const firebaseConfig = {
     AuthService,
     AuthGuard,
     AdminAuthGuard,
+    AUTH_PROVIDERS,
 
     // For creating a mock back-end.
     fakeBackendProvider,

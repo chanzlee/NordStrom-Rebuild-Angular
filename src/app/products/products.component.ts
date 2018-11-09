@@ -27,10 +27,10 @@ export class ProductsComponent {
     }));
   }
   
-  add(product: HTMLInputElement) { 
-    this.productsRef.push({ name: product });
-    product.value = '';
-  }
+  // add(product: HTMLInputElement) { 
+  //   this.productsRef.push({ name: product });
+  //   product.value = '';
+  // }
 
   update(key: string, product: string) { 
     this.productsRef.update(key, { name: product });

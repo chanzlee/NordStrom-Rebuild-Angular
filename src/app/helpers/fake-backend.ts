@@ -1,6 +1,7 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { ErrorHandler } from '@angular/core';
+import { forEach } from '@angular/router/src/utils/collection';
 
 //fucntion takes mock back end arguments just for demo 
 export function fakeBackendFactory(
@@ -12,6 +13,7 @@ export function fakeBackendFactory(
 
   // account with admin === false;
   let token: string;
+  let userTempList: {}[];
     
   backend.connections.subscribe((connection: MockConnection) => {
     //Using the setTimeout() function to simulate an  asynchronous call to the server that takes 1 second. 
@@ -56,23 +58,33 @@ export function fakeBackendFactory(
 
           if (connection.request.url.endsWith('/users') && connection.request.method === RequestMethod.Post) {
           let body = JSON.parse(connection.request.getBody());
-          this.productsRef.push({ email: body.email,
-                                  password : body.password
+          let isExist = false;
+          userTempList.forEach(function(element){
+            if(element["email"] === body.email) {
+              isExist = true;
+            } 
           });
-          token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkxIiwibmFtZSI6Iktlbm5ldGggRHUiLCJhZG1pbiI6ZmFsc2V9.aTzIHqehcVxLu61b_nXHx-0m1zdRpZzygWfyb4OBK_M';
-          connection.mockRespond(new Response(
-            new ResponseOptions({
-              status: 200,
-              body: { token: token }
-          })));
 
-          // for now, jwt is not translated inside the app. When users sign up, it just send response of kenneth user information.
-          //  https://blog.angular-university.io/angular-jwt/
-        } else {
-          //Bad user request.
-          connection.mockRespond(new Response(
-            new ResponseOptions({ status: 401 })
-          ));
+            if (!isExist){
+              this.productsRef.push({ email: body.email,
+                                  password : body.password});
+            userTempList.push({ email: body.email,
+                            password : body.password});
+            token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkxIiwibmFtZSI6Iktlbm5ldGggRHUiLCJhZG1pbiI6ZmFsc2V9.aTzIHqehcVxLu61b_nXHx-0m1zdRpZzygWfyb4OBK_M';
+            connection.mockRespond(new Response(
+              new ResponseOptions({
+                status: 200,
+                body: { token: token }
+            })));
+
+            // for now, jwt is not translated inside the app. When users sign up, it just send response of kenneth user information.
+            //  https://blog.angular-university.io/angular-jwt/
+          } else {
+            //Bad user request.
+            connection.mockRespond(new Response(
+              new ResponseOptions({ status: 401 })
+            ));
+          }
         }
 
 

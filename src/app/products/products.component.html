@@ -37,16 +37,19 @@
 </div> -->
 
 
-<div class="row justify-content-center">
+<div class="row justify-content-center min-width">
   <div class="col-3 col-md-2 col-sm-0 side-bar">
 
     <app-side-bar></app-side-bar>
 
   </div>  
   <div class="col-9 col-md-9 col-sm-8 ">
+    <div class="row-admin" *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
+        <app-admin></app-admin>
+    </div>
     <div class="row justify-content-bewteen">
       <span class="product-title">Best Sellers</span><br />
-      <span class="total-number">{{(productsRef | async)?.length}}</span>
+      <!-- <span class="total-number">{{(productsRef | async)?.length}}</span> -->
       <div class="grid-zone">
         <div class="grid-item" *ngFor="let product of productSnapshot | async">
 
@@ -74,5 +77,7 @@
         </div>
       </div>
     </div>
+
   </div>
+
 </div>

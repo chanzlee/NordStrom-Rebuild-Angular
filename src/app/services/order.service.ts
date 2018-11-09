@@ -7,13 +7,13 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Injectable()
 export class OrderService {
-  courses: AngularFireList<any>;
+  products: AngularFireList<any>;
   
   constructor(private authHttp: AuthHttp, private http: Http, public db: AngularFireDatabase) {
   }
 
   getProducts() { 
-    this.courses = this.db.list('/courses')
-    return this.courses;
+    this.products = this.db.list('/products')
+    return this.products;
   }
 }

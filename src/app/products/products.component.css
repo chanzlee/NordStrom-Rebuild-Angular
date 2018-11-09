@@ -45,3 +45,7 @@ p.grid-reviews {
     color:gray;
     font-weight: 100;
 }
+
+.row.justify-content-center.min-width {
+    min-height: 10%;
+}

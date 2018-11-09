@@ -11,7 +11,7 @@ export class AuthService {
   usersRef: AngularFireList<any>;
   userSnapshot: Observable<any[]>;
 
-  constructor(private http: Http, private authService: AuthService, public db: AngularFireDatabase) {
+  constructor(private http: Http, public db: AngularFireDatabase) {
       this.usersRef = db.list('/users')
       this.userSnapshot = this.usersRef.snapshotChanges().pipe(map(changes => {
         return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))

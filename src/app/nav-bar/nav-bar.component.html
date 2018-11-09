@@ -81,14 +81,14 @@
         <span 
           class="main-nav" 
           *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
-          <a routerLink="/admin">Admin</a>
+          <a routerLink="/products">Admin</a>
         </span>
           <div 
             [@expandCollapse]="!adminIsCollapsed ? 'collapsedState' : 'expandedState'" 
             class="hiddenDiv3" id="collapseAdmin">
             <div class="card">
               <div class="card-body toggle-body">
-                <a routerLink="/admin" class="btn btn-dark">Add products</a><br />
+                <a routerLink="/products" class="btn btn-dark">Add products</a><br />
               </div>
             </div>
           </div>
