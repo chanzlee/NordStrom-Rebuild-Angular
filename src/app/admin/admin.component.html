@@ -1,5 +1,5 @@
 
-<form class="form-new-product" #f="ngForm" (ngSubmit)="add(f)">
+<form class="form-new-product" #f="ngForm" >
   <h2 class="form-new-product-heading">Admin: Add New Product</h2>
 
   <!-- Only if invalid log in is true -->
@@ -21,5 +21,5 @@
   <label for="inputStar">Star: </label>
   <input type="number" id="inputStar" name="star" ngModel class="form-control" required>
 
-  <button class="btn btn-lg btn-dark btn-block" type="submit">Submit</button>
+  <button class="btn btn-lg btn-dark btn-block" type="click" (click)="add(f)">Submit</button>
 </form>

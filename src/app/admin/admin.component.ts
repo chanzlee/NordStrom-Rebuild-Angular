@@ -1,5 +1,5 @@
 import { OrderService } from './../services/order.service';
-import { Component} from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { AngularFireDatabase, AngularFireList} from 'angularfire2/database'
 import { Observable } from 'rxjs';import { map } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
@@ -10,6 +10,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent{
+  @ViewChild('form-new-product') formValues;
 
   products: AngularFireList<any> = this.orderService.getProducts();
   products$: Observable<any[]>;
@@ -43,7 +44,8 @@ export class AdminComponent{
       star: newProduct.star.value,
       reviews: { "defalt-review" : { "name":"Chan", "comment": "Leave review and earn up to $10 reward", "star": "3"}}
     });
-    
+
+    this.formValues.resetForm();
   }
 
   update(key: string, product: string) { 
