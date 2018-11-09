@@ -31,15 +31,16 @@ export class AdminComponent{
   }
   
   add(product: HTMLInputElement) { 
+    console.log(product);
     let newProduct = product.form.controls;
-    console.log();
+    
 
     this.products.push({
-      name: newProduct.name,
-      price: newProduct.price,
-      isNew: newProduct,
-      src: newProduct.src,
-      star: newProduct.star,
+      name: newProduct.name.value,
+      price: newProduct.price.value,
+      isNew: newProduct.isNew.value,
+      src: newProduct.src.value,
+      star: newProduct.star.value,
     });
     
   }
