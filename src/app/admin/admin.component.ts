@@ -41,6 +41,7 @@ export class AdminComponent{
       isNew: newProduct.isNew.value,
       src: newProduct.src.value,
       star: newProduct.star.value,
+      reviews: { "defalt-review" : { "name":"Chan", "comment": "Leave review and earn up to $10 reward", "star": "3"}}
     });
     
   }

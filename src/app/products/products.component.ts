@@ -32,8 +32,11 @@ export class ProductsComponent {
   //   product.value = '';
   // }
 
-  update(key: string, product: string) { 
-    this.productsRef.update(key, { name: product });
+  updateName(key: string, productName: string) { 
+    this.productsRef.update(key, { name: productName });
+  }
+  updatePrice(key: string, priceValue: number) { 
+    this.productsRef.update(key, { price: priceValue });
   }
   delete(key:string) {
     this.productsRef.remove(key);

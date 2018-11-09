@@ -70,8 +70,10 @@
           </div>
           
           <div *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
-            <input type="text" #updateproduct [value]="product.name" />
-            <button (click)="update(product.key, updateproduct.value)">Update</button>
+            <input type="text" #updateproductName [value]="product.name" />
+            <input type="text" #updateproductPrice [value]="product.price" />
+            <button (click)="updateName(product.key, updateproductName.value)">Update Name</button>
+            <button (click)="updatePrice(product.key, updateproductPrice.value)">Update Price</button>
             <button (click)="delete(product.key)">Delete</button>
           </div>
         </div>
