@@ -1,7 +1,7 @@
 .grid-zone {
     display: grid;
     grid-template-columns: repeat(4, 24%); 
-    grid-template-rows: repeat(3, 450px);
+    grid-template-rows: repeat(3, auto);
     grid-gap: 13px;
     margin-top: 6%;
     grid-auto-rows: 450px;

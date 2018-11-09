@@ -16,6 +16,8 @@ export class ProductsComponent {
   productSnapshot: Observable<any[]>;
   // subscription: Subscription;
 
+  objectKeys  = object => Object.keys(object);
+
   constructor (private authService: AuthService, public db: AngularFireDatabase) {
     this.productsRef = db.list('/products')
     // this.products$ = this.products.valueChanges();
