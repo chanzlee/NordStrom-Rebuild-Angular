@@ -9,7 +9,7 @@ import { MockBackend } from '@angular/http/testing';
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
+import { HttpModule, Http, BaseRequestOptions, RequestOptions } from '@angular/http';
 import { RouterModule } from '@angular/router'; 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +34,7 @@ import { ProductsComponent } from './products/products.component';
 
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { AUTH_PROVIDERS, AuthConfig, AuthHttp } from 'angular2-jwt';
 import { ReversePipe } from './reverse.pipe';
 
 export const firebaseConfig = {
@@ -43,6 +43,15 @@ export const firebaseConfig = {
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
 };
+
+export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+  return new AuthHttp(new AuthConfig({
+    tokenName: 'token',
+          tokenGetter: (() => localStorage.getItem('token')),
+          globalHeaders: [{'Content-Type':'application/json'}],
+     }), http, options);
+}
+
 
 
 @NgModule({
@@ -87,7 +96,11 @@ export const firebaseConfig = {
     AuthService,
     AuthGuard,
     AdminAuthGuard,
-    AUTH_PROVIDERS,
+    {
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [Http, RequestOptions]
+    },
 
     // For creating a mock back-end.
     fakeBackendProvider,

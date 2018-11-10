@@ -13,9 +13,8 @@ export class ProductsComponent {
   reverse: boolean = false;
   productsRef: AngularFireList<any>;
   // products$: Observable<any[]>;
-  // product$;
   productSnapshot: Observable<any[]>;
-  // subscription: Subscription;
+  sortOption: string ='Sort by featured';
 
   objectKeys = object => Object.keys(object);
 
