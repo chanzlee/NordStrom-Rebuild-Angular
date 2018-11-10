@@ -18,7 +18,7 @@ export class ProductsComponent {
 
   objectKeys = object => Object.keys(object);
 
-  constructor(private authService: AuthService, public db: AngularFireDatabase) {
+  constructor(public authService: AuthService, public db: AngularFireDatabase) {
     this.productsRef = db.list('/products')
     this.productSnapshot = this.productsRef.snapshotChanges().pipe(map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
