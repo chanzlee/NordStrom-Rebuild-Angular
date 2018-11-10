@@ -50,13 +50,13 @@
     <div class="justify-content-bewteen">
       <p class="product-title">Best Sellers</p>
       <p class="total-number">{{(productSnapshot | async)?.length}} items</p>
-      <div class="input-group mb-3">
+      <div class="mb-5">
         <select [(ngModel)]="sortOption" (ngModelChange)="dataQuery(sortOption)" name="sortOption">
-          <!-- <select> -->
           <option value="" selected>Sort by featured</option>
           <option value="star">Sort by star</option>
+          <option value="name">Sort by name</option>
+          <option value="price">Sort by price: low to high</option>
           <option value="pricereverse">Sort by price: high to low</option>
-          <!-- <option (click) ="dataQuery(sortInput.value)" value="price">Sort by price: low to high</option> -->
         </select>
       </div>
 
