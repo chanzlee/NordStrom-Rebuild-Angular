@@ -42,41 +42,90 @@
 
     <app-side-bar></app-side-bar>
 
-  </div>  
+  </div>
   <div class="col-9 col-md-9 col-sm-8 ">
     <div class="row-admin" *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
-        <app-admin></app-admin>
+      <app-admin></app-admin>
     </div>
-    <div class="row justify-content-bewteen">
-      <span class="product-title">Best Sellers</span><br />
-      <!-- <span class="total-number">{{(productsRef | async)?.length}}</span> -->
-      <div class="grid-zone">
-        <div class="grid-item" *ngFor="let product of productSnapshot | async">
+    <div class="justify-content-bewteen">
+      <p class="product-title">Best Sellers</p>
+      <p class="total-number">{{(productSnapshot | async)?.length}} items</p>
+      <div class="input-group mb-3">
+        <select [(ngModel)]="sortOption" (ngModelChange)="dataQuery(sortOption)" name="sortOption">
+          <!-- <select> -->
+          <option value="" selected>Sort by featured</option>
+          <option value="star">Sort by star</option>
+          <option value="pricereverse">Sort by price: high to low</option>
+          <!-- <option (click) ="dataQuery(sortInput.value)" value="price">Sort by price: low to high</option> -->
+        </select>
+      </div>
 
-          <img class="grid-img" src="{{product.src}}">
-          <span class="newThang" *ngIf=product.isNew class="grid-new">New!
-          </span>
-          <span class="newThang" *ngIf=!product.isNew class="grid-new">
+      <div class="grid-zone">
+
+        <ng-container *ngIf="!reverse">
+
+
+          <div class="grid-item" *ngFor="let product of productSnapshot | async">
+
+            <img class="grid-img" src="{{product.src}}">
+            <span class="newThang" *ngIf=product.isNew class="grid-new">New!
+            </span>
+            <span class="newThang" *ngIf=!product.isNew class="grid-new">
               <br /></span><br />
-          <p class="grid-name">{{product.name || product}}</p>
-          <p class="grid-price">${{product.price}}</p>
-          <div class="grid-rating">
-            <span *ngIf="product.star == 1">★☆☆☆☆</span>
-            <span *ngIf="product.star == 2">★★☆☆☆</span>
-            <span *ngIf="product.star == 3">★★★☆☆</span>
-            <span *ngIf="product.star == 4">★★★★☆</span>
-            <span *ngIf="product.star == 5">★★★★★</span>&nbsp;
-            <span class="grid-reviews"><a>({{objectKeys(product.reviews).length}})</a></span>
+            <p class="grid-name">{{product.name || product}}</p>
+            <p class="grid-price">${{product.price}}</p>
+            <div class="grid-rating">
+              <span *ngIf="product.star == 1">★☆☆☆☆</span>
+              <span *ngIf="product.star == 2">★★☆☆☆</span>
+              <span *ngIf="product.star == 3">★★★☆☆</span>
+              <span *ngIf="product.star == 4">★★★★☆</span>
+              <span *ngIf="product.star == 5">★★★★★</span>&nbsp;
+              <span class="grid-reviews"><a>({{objectKeys(product.reviews).length}})</a></span>
+            </div>
+
+            <div *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
+              <input type="text" #updateproductName [value]="product.name" />
+              <input type="text" #updateproductPrice [value]="product.price" />
+              <button (click)="updateName(product.key, updateproductName.value)">Update Name</button>
+              <button (click)="updatePrice(product.key, updateproductPrice.value)">Update Price</button>
+              <button (click)="delete(product.key)">Delete</button>
+            </div>
           </div>
-          
-          <div *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
-            <input type="text" #updateproductName [value]="product.name" />
-            <input type="text" #updateproductPrice [value]="product.price" />
-            <button (click)="updateName(product.key, updateproductName.value)">Update Name</button>
-            <button (click)="updatePrice(product.key, updateproductPrice.value)">Update Price</button>
-            <button (click)="delete(product.key)">Delete</button>
+        </ng-container>
+
+        <ng-container *ngIf="reverse">
+
+
+          <div class="grid-item" *ngFor="let product of productSnapshot | async | reverse">
+
+            <img class="grid-img" src="{{product.src}}">
+            <span class="newThang" *ngIf=product.isNew class="grid-new">New!
+            </span>
+            <span class="newThang" *ngIf=!product.isNew class="grid-new">
+              <br /></span><br />
+            <p class="grid-name">{{product.name || product}}</p>
+            <p class="grid-price">${{product.price}}</p>
+            <div class="grid-rating">
+              <span *ngIf="product.star == 1">★☆☆☆☆</span>
+              <span *ngIf="product.star == 2">★★☆☆☆</span>
+              <span *ngIf="product.star == 3">★★★☆☆</span>
+              <span *ngIf="product.star == 4">★★★★☆</span>
+              <span *ngIf="product.star == 5">★★★★★</span>&nbsp;
+              <span class="grid-reviews"><a>({{objectKeys(product.reviews).length}})</a></span>
+            </div>
+
+            <div *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
+              <input type="text" #updateproductName [value]="product.name" />
+              <input type="text" #updateproductPrice [value]="product.price" />
+              <button (click)="updateName(product.key, updateproductName.value)">Update Name</button>
+              <button (click)="updatePrice(product.key, updateproductPrice.value)">Update Price</button>
+              <button (click)="delete(product.key)">Delete</button>
+            </div>
           </div>
-        </div>
+        </ng-container>
+
+
+
       </div>
     </div>
 

@@ -35,6 +35,7 @@ import { ProductsComponent } from './products/products.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { ReversePipe } from './reverse.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -58,7 +59,8 @@ export const firebaseConfig = {
     SubNavComponent,
     FooterComponent,
     ProductsComponent,
-    SideBarComponent
+    SideBarComponent,
+    ReversePipe
   ],
   imports: [
     BrowserModule,

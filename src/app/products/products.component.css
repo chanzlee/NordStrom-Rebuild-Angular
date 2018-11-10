@@ -59,3 +59,8 @@ img.grid-img {
     width:100%;
     height:100%;
 }
+
+.total-number {
+    margin-top: -2%;
+    font-size:0.7rem;
+}
