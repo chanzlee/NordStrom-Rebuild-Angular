@@ -51,8 +51,8 @@
       <p class="product-title">Best Sellers</p>
       <p class="total-number">{{(productSnapshot | async)?.length}} items</p>
       <div class="mb-5">
-        <select [(ngModel)]="sortOption" (ngModelChange)="dataQuery(sortOption); sortOption = sortOption">
-          <option value="" selected>Sort by featured</option>
+        <select [(ngModel)]="sortOption" (ngModelChange)="dataQuery()">
+          <option value="Sort by featured">Sort by featured</option>
           <option value="starreverse">Sort by star</option>
           <option value="name">Sort by name</option>
           <option value="price">Sort by price: low to high</option>

@@ -54,9 +54,9 @@ export class ProductsComponent {
     this.productsRef.remove();
   }
 
-  dataQuery(criteria) {
-    
-    if (!criteria) {
+  dataQuery() {
+    let criteria = this.sortOption;
+    if (criteria==='Sort by featured') {
       this.productsRef = this.db.list('/products');
       this.productSnapshot = this.productsRef.snapshotChanges().pipe(map(changes => {
         return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
